@@ -3,7 +3,8 @@ Imports System.Data.SqlClient
 
 Public Class Form1
 
-    'Dim conexion As New SqlConnection
+    Dim conexion As New SqlConnection
+    Dim comando As New SqlCommand
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -13,9 +14,15 @@ Public Class Form1
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
+        conexion.Open()
 
+        Dim consulta As String = "select * from usuarios where nombre='" & txtUsuario.Text & "' and contraseña = '" & txtContrasenia.Text & "'"
+        comando = New SqlCommand(consulta, conexion)
+        Dim lector As SqlDataReader
+        lector = comando.ExecuteReader
 
-        If (txtUsuario.Text = "Arath") And (txtContrasenia.Text = "123") Then
+        If (lector.HasRows) Then
             Form2.Show()
         Else
             MsgBox("Usuario o Contraseña incorrecta, porfavor verifique")
