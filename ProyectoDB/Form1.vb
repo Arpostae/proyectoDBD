@@ -14,7 +14,10 @@ Public Class Form1
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
+        'conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
+        'conexion.Open()
+
+        conexion = New SqlConnection("server=ARATH; database=Restaurante; integrated security=true")
         conexion.Open()
 
         Dim consulta As String = "select * from usuarios where nombre='" & txtUsuario.Text & "' and contraseña = '" & txtContrasenia.Text & "'"
@@ -63,7 +66,8 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim connectionString As String = "Server=DESKTOP-GR0BB9K\SQLEXPRESS;Database=Restaurante;Integrated Security=True;"
+        'Dim connectionString As String = "Server=DESKTOP-GR0BB9K\SQLEXPRESS;Database=Restaurante;Integrated Security=True;"
+        Dim connectionString As String = "Server=ARATH;Database=Restaurante;Integrated Security=True;"
 
         ' Consulta de prueba
         Dim query As String = "SELECT TOP 1 * FROM Empleados"
