@@ -151,7 +151,7 @@ Partial Class frmAdminMenu
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.lblNombre, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.lblDetalle, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.lblPrecio, 0, 0)
@@ -171,7 +171,7 @@ Partial Class frmAdminMenu
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblNombre.Location = New System.Drawing.Point(219, 0)
+        Me.lblNombre.Location = New System.Drawing.Point(218, 0)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(210, 16)
         Me.lblNombre.TabIndex = 0
@@ -182,7 +182,7 @@ Partial Class frmAdminMenu
         '
         Me.lblDetalle.AutoSize = True
         Me.lblDetalle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblDetalle.Location = New System.Drawing.Point(435, 0)
+        Me.lblDetalle.Location = New System.Drawing.Point(434, 0)
         Me.lblDetalle.Name = "lblDetalle"
         Me.lblDetalle.Size = New System.Drawing.Size(210, 16)
         Me.lblDetalle.TabIndex = 1
@@ -195,7 +195,7 @@ Partial Class frmAdminMenu
         Me.lblPrecio.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblPrecio.Location = New System.Drawing.Point(3, 0)
         Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(210, 16)
+        Me.lblPrecio.Size = New System.Drawing.Size(209, 16)
         Me.lblPrecio.TabIndex = 2
         Me.lblPrecio.Text = "Precio"
         Me.lblPrecio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -204,14 +204,14 @@ Partial Class frmAdminMenu
         '
         Me.TableLayoutPanel2.SetColumnSpan(Me.txtDetalle, 2)
         Me.txtDetalle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtDetalle.Location = New System.Drawing.Point(435, 19)
+        Me.txtDetalle.Location = New System.Drawing.Point(434, 19)
         Me.txtDetalle.Name = "txtDetalle"
-        Me.txtDetalle.Size = New System.Drawing.Size(232, 20)
+        Me.txtDetalle.Size = New System.Drawing.Size(233, 20)
         Me.txtDetalle.TabIndex = 3
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(219, 19)
+        Me.txtNombre.Location = New System.Drawing.Point(218, 19)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(210, 20)
         Me.txtNombre.TabIndex = 4
@@ -221,7 +221,7 @@ Partial Class frmAdminMenu
         Me.txtPrecio.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtPrecio.Location = New System.Drawing.Point(3, 19)
         Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(210, 20)
+        Me.txtPrecio.Size = New System.Drawing.Size(209, 20)
         Me.txtPrecio.TabIndex = 5
         '
         'frmAdminMenu
