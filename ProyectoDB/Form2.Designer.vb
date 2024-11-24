@@ -41,8 +41,9 @@ Partial Class Form2
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.btnLogin = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -216,31 +217,43 @@ Partial Class Form2
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Mesa 7"
         '
-        'btnLogin
+        'Button4
         '
-        Me.btnLogin.Image = CType(resources.GetObject("btnLogin.Image"), System.Drawing.Image)
-        Me.btnLogin.Location = New System.Drawing.Point(845, 67)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(110, 96)
-        Me.btnLogin.TabIndex = 19
-        Me.btnLogin.UseVisualStyleBackColor = True
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(847, 252)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(162, 97)
+        Me.Button4.TabIndex = 24
+        Me.Button4.Text = "Empleados"
+        Me.Button4.UseVisualStyleBackColor = False
         '
-        'Label10
+        'Label11
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(866, 48)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(64, 16)
-        Me.Label10.TabIndex = 20
-        Me.Label10.Text = "Regresar"
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(864, 72)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(64, 16)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Regresar"
+        '
+        'Button5
+        '
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.Location = New System.Drawing.Point(847, 111)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(110, 96)
+        Me.Button5.TabIndex = 22
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1086, 643)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.btnLogin)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
@@ -284,6 +297,7 @@ Partial Class Form2
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents btnLogin As Button
-    Friend WithEvents Label10 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Button5 As Button
 End Class

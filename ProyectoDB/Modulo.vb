@@ -3,7 +3,7 @@
 Module Module1
     Sub Main()
         ' Cadena de conexión
-        Dim connectionString As String = "Server=DESKTOP-GR0BB9K\SQLEXPRESS;Database=Restaurante;Integrated Security=True;"
+        Dim connectionString As String = "Server=ARATH;Database=Restaurante;Integrated Security=True;"
 
         ' Objeto de conexión
         Using connection As New SqlConnection(connectionString)
