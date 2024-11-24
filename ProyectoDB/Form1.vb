@@ -14,7 +14,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
+        conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
         conexion.Open()
 
         Dim consulta As String = "select * from usuarios where nombre='" & txtUsuario.Text & "' and contraseña = '" & txtContrasenia.Text & "'"
