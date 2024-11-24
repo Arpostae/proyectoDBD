@@ -24,8 +24,10 @@ Public Class Form1
 
         If (lector.HasRows) Then
             Form2.Show()
+            MessageBox.Show("Bienvenido, '" & txtUsuario.Text & "'")
+            Me.Hide()
         Else
-            MsgBox("Usuario o Contraseña incorrecta, porfavor verifique")
+            MessageBox.Show("Usuario o Contraseña incorrecta, porfavor verifique")
         End If
     End Sub
 
