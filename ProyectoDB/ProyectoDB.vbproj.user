@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Project</StartAction>
-    <StartWorkingDirectory>C:\Users\arath\OneDrive\Escritorio\ProyectoDB\ProyectoDB\ProyectoDB\bin\Debug\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\Users\zetun\Desktop\proyectoDBD\ProyectoDB\bin\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup>
     <PublishUrlHistory>publish\</PublishUrlHistory>

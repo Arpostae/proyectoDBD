@@ -107,6 +107,12 @@
     <Compile Include="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAdminMenu.Designer.vb">
+      <DependentUpon>frmAdminMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

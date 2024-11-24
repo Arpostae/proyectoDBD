@@ -54,7 +54,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim connectionString As String = "Server=ARATH;Database=Restaurante;Integrated Security=True;"
+        Dim connectionString As String = "Server=DESKTOP-GR0BB9K\SQLEXPRESS;Database=Restaurante;Integrated Security=True;"
 
         ' Consulta de prueba
         Dim query As String = "SELECT TOP 1 * FROM Empleados"
