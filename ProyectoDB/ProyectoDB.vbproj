@@ -119,6 +119,12 @@
     <Compile Include="frmAdminMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmPedidos.Designer.vb">
+      <DependentUpon>FrmPedidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminMenu.resx">
       <DependentUpon>frmAdminMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
