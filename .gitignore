@@ -1,4 +1,5 @@
 .vs/
 obj/
 *.cache
-ProyectoDB/bin/Debug/
+**/bin/
+
