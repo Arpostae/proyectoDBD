@@ -34,14 +34,14 @@ Partial Class frmAdminMenu
         Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.lblId = New System.Windows.Forms.Label()
         Me.lblDetalle = New System.Windows.Forms.Label()
-        Me.lblPrecio = New System.Windows.Forms.Label()
+        Me.txtDetalle = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
-        Me.txtDetalle = New System.Windows.Forms.TextBox()
-        Me.lblId = New System.Windows.Forms.Label()
-        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.lblPrecio = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.bttnRegresar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -53,27 +53,30 @@ Partial Class frmAdminMenu
         'bttnComida
         '
         Me.bttnComida.Image = CType(resources.GetObject("bttnComida.Image"), System.Drawing.Image)
-        Me.bttnComida.Location = New System.Drawing.Point(3, 3)
+        Me.bttnComida.Location = New System.Drawing.Point(4, 4)
+        Me.bttnComida.Margin = New System.Windows.Forms.Padding(4)
         Me.bttnComida.Name = "bttnComida"
-        Me.bttnComida.Size = New System.Drawing.Size(77, 74)
+        Me.bttnComida.Size = New System.Drawing.Size(103, 90)
         Me.bttnComida.TabIndex = 0
         Me.bttnComida.UseVisualStyleBackColor = True
         '
         'bttnBebidas
         '
         Me.bttnBebidas.Image = CType(resources.GetObject("bttnBebidas.Image"), System.Drawing.Image)
-        Me.bttnBebidas.Location = New System.Drawing.Point(86, 3)
+        Me.bttnBebidas.Location = New System.Drawing.Point(115, 4)
+        Me.bttnBebidas.Margin = New System.Windows.Forms.Padding(4)
         Me.bttnBebidas.Name = "bttnBebidas"
-        Me.bttnBebidas.Size = New System.Drawing.Size(77, 74)
+        Me.bttnBebidas.Size = New System.Drawing.Size(103, 90)
         Me.bttnBebidas.TabIndex = 1
         Me.bttnBebidas.UseVisualStyleBackColor = True
         '
         'bttnPostres
         '
         Me.bttnPostres.Image = CType(resources.GetObject("bttnPostres.Image"), System.Drawing.Image)
-        Me.bttnPostres.Location = New System.Drawing.Point(169, 3)
+        Me.bttnPostres.Location = New System.Drawing.Point(226, 4)
+        Me.bttnPostres.Margin = New System.Windows.Forms.Padding(4)
         Me.bttnPostres.Name = "bttnPostres"
-        Me.bttnPostres.Size = New System.Drawing.Size(77, 74)
+        Me.bttnPostres.Size = New System.Drawing.Size(103, 90)
         Me.bttnPostres.TabIndex = 2
         Me.bttnPostres.UseVisualStyleBackColor = True
         '
@@ -86,11 +89,12 @@ Partial Class frmAdminMenu
         Me.TableLayoutPanel1.Controls.Add(Me.bttnComida, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.bttnPostres, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.bttnBebidas, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(252, 25)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(336, 31)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(251, 80)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(335, 98)
         Me.TableLayoutPanel1.TabIndex = 3
         '
         'dgvMenu
@@ -98,18 +102,21 @@ Partial Class frmAdminMenu
         Me.dgvMenu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvMenu.Location = New System.Drawing.Point(12, 196)
+        Me.dgvMenu.Location = New System.Drawing.Point(16, 241)
+        Me.dgvMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvMenu.Name = "dgvMenu"
+        Me.dgvMenu.RowHeadersWidth = 51
         Me.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMenu.Size = New System.Drawing.Size(737, 254)
+        Me.dgvMenu.Size = New System.Drawing.Size(983, 313)
         Me.dgvMenu.TabIndex = 4
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbNuevo, Me.tsbGuardar, Me.tsbEliminar, Me.tsbCancelar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(761, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1015, 27)
         Me.ToolStrip1.TabIndex = 5
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -119,7 +126,7 @@ Partial Class frmAdminMenu
         Me.tsbNuevo.Image = CType(resources.GetObject("tsbNuevo.Image"), System.Drawing.Image)
         Me.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbNuevo.Name = "tsbNuevo"
-        Me.tsbNuevo.Size = New System.Drawing.Size(23, 22)
+        Me.tsbNuevo.Size = New System.Drawing.Size(29, 24)
         Me.tsbNuevo.Text = "Nuevo"
         '
         'tsbGuardar
@@ -128,7 +135,7 @@ Partial Class frmAdminMenu
         Me.tsbGuardar.Image = CType(resources.GetObject("tsbGuardar.Image"), System.Drawing.Image)
         Me.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbGuardar.Name = "tsbGuardar"
-        Me.tsbGuardar.Size = New System.Drawing.Size(23, 22)
+        Me.tsbGuardar.Size = New System.Drawing.Size(29, 24)
         Me.tsbGuardar.Text = "Guardar"
         '
         'tsbEliminar
@@ -137,7 +144,7 @@ Partial Class frmAdminMenu
         Me.tsbEliminar.Image = CType(resources.GetObject("tsbEliminar.Image"), System.Drawing.Image)
         Me.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbEliminar.Name = "tsbEliminar"
-        Me.tsbEliminar.Size = New System.Drawing.Size(23, 22)
+        Me.tsbEliminar.Size = New System.Drawing.Size(29, 24)
         Me.tsbEliminar.Text = "Eliminar"
         '
         'tsbCancelar
@@ -146,7 +153,7 @@ Partial Class frmAdminMenu
         Me.tsbCancelar.Image = CType(resources.GetObject("tsbCancelar.Image"), System.Drawing.Image)
         Me.tsbCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbCancelar.Name = "tsbCancelar"
-        Me.tsbCancelar.Size = New System.Drawing.Size(23, 22)
+        Me.tsbCancelar.Size = New System.Drawing.Size(29, 24)
         Me.tsbCancelar.Text = "Cancelar"
         '
         'TableLayoutPanel2
@@ -164,121 +171,130 @@ Partial Class frmAdminMenu
         Me.TableLayoutPanel2.Controls.Add(Me.txtPrecio, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.lblNombre, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.lblPrecio, 1, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(37, 125)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(49, 154)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.40741!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.59259!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(694, 50)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(925, 62)
         Me.TableLayoutPanel2.TabIndex = 6
-        '
-        'lblNombre
-        '
-        Me.lblNombre.AutoSize = True
-        Me.lblNombre.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblNombre.Location = New System.Drawing.Point(311, 0)
-        Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(148, 16)
-        Me.lblNombre.TabIndex = 0
-        Me.lblNombre.Text = "Nombre"
-        Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'lblDetalle
-        '
-        Me.lblDetalle.AutoSize = True
-        Me.lblDetalle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblDetalle.Location = New System.Drawing.Point(465, 0)
-        Me.lblDetalle.Name = "lblDetalle"
-        Me.lblDetalle.Size = New System.Drawing.Size(226, 16)
-        Me.lblDetalle.TabIndex = 1
-        Me.lblDetalle.Text = "Detalle"
-        Me.lblDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'lblPrecio
-        '
-        Me.lblPrecio.AutoSize = True
-        Me.lblPrecio.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblPrecio.Location = New System.Drawing.Point(157, 0)
-        Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(148, 16)
-        Me.lblPrecio.TabIndex = 2
-        Me.lblPrecio.Text = "Precio"
-        Me.lblPrecio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(311, 19)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(148, 20)
-        Me.txtNombre.TabIndex = 4
-        '
-        'txtPrecio
-        '
-        Me.txtPrecio.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtPrecio.Location = New System.Drawing.Point(157, 19)
-        Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(148, 20)
-        Me.txtPrecio.TabIndex = 5
-        '
-        'txtDetalle
-        '
-        Me.txtDetalle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtDetalle.Location = New System.Drawing.Point(465, 19)
-        Me.txtDetalle.Name = "txtDetalle"
-        Me.txtDetalle.Size = New System.Drawing.Size(226, 20)
-        Me.txtDetalle.TabIndex = 7
-        '
-        'lblId
-        '
-        Me.lblId.AutoSize = True
-        Me.lblId.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblId.Location = New System.Drawing.Point(3, 0)
-        Me.lblId.Name = "lblId"
-        Me.lblId.Size = New System.Drawing.Size(148, 16)
-        Me.lblId.TabIndex = 7
-        Me.lblId.Text = "Id"
-        Me.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtId
         '
         Me.txtId.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(3, 19)
+        Me.txtId.Location = New System.Drawing.Point(4, 24)
+        Me.txtId.Margin = New System.Windows.Forms.Padding(4)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(148, 20)
+        Me.txtId.Size = New System.Drawing.Size(197, 22)
         Me.txtId.TabIndex = 7
+        '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblId.Location = New System.Drawing.Point(4, 0)
+        Me.lblId.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(197, 20)
+        Me.lblId.TabIndex = 7
+        Me.lblId.Text = "Id"
+        Me.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblDetalle
+        '
+        Me.lblDetalle.AutoSize = True
+        Me.lblDetalle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblDetalle.Location = New System.Drawing.Point(619, 0)
+        Me.lblDetalle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDetalle.Name = "lblDetalle"
+        Me.lblDetalle.Size = New System.Drawing.Size(302, 20)
+        Me.lblDetalle.TabIndex = 1
+        Me.lblDetalle.Text = "Detalle"
+        Me.lblDetalle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'txtDetalle
+        '
+        Me.txtDetalle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDetalle.Location = New System.Drawing.Point(619, 24)
+        Me.txtDetalle.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDetalle.Name = "txtDetalle"
+        Me.txtDetalle.Size = New System.Drawing.Size(302, 22)
+        Me.txtDetalle.TabIndex = 7
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(414, 24)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(196, 22)
+        Me.txtNombre.TabIndex = 4
+        '
+        'txtPrecio
+        '
+        Me.txtPrecio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtPrecio.Location = New System.Drawing.Point(209, 24)
+        Me.txtPrecio.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(197, 22)
+        Me.txtPrecio.TabIndex = 5
+        '
+        'lblNombre
+        '
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblNombre.Location = New System.Drawing.Point(414, 0)
+        Me.lblNombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(197, 20)
+        Me.lblNombre.TabIndex = 0
+        Me.lblNombre.Text = "Nombre"
+        Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'lblPrecio
+        '
+        Me.lblPrecio.AutoSize = True
+        Me.lblPrecio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblPrecio.Location = New System.Drawing.Point(209, 0)
+        Me.lblPrecio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPrecio.Name = "lblPrecio"
+        Me.lblPrecio.Size = New System.Drawing.Size(197, 20)
+        Me.lblPrecio.TabIndex = 2
+        Me.lblPrecio.Text = "Precio"
+        Me.lblPrecio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(635, 9)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Location = New System.Drawing.Point(847, 11)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(50, 13)
+        Me.Label11.Size = New System.Drawing.Size(64, 16)
         Me.Label11.TabIndex = 25
         Me.Label11.Text = "Regresar"
         '
         'bttnRegresar
         '
         Me.bttnRegresar.Image = CType(resources.GetObject("bttnRegresar.Image"), System.Drawing.Image)
-        Me.bttnRegresar.Location = New System.Drawing.Point(620, 24)
-        Me.bttnRegresar.Margin = New System.Windows.Forms.Padding(2)
+        Me.bttnRegresar.Location = New System.Drawing.Point(827, 30)
+        Me.bttnRegresar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.bttnRegresar.Name = "bttnRegresar"
-        Me.bttnRegresar.Size = New System.Drawing.Size(82, 78)
+        Me.bttnRegresar.Size = New System.Drawing.Size(109, 96)
         Me.bttnRegresar.TabIndex = 24
         Me.bttnRegresar.UseVisualStyleBackColor = True
         '
         'frmAdminMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(761, 450)
+        Me.ClientSize = New System.Drawing.Size(1015, 554)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.bttnRegresar)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.dgvMenu)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmAdminMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cambios en Menú"

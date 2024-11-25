@@ -11,7 +11,7 @@
 
     End Sub
 
-    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles Eliminar.Click
 
     End Sub
 End Class

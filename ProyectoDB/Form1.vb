@@ -14,10 +14,8 @@ Public Class Form1
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
-        'conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
-        'conexion.Open()
-
+        'conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
+        conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
         'conexion = New SqlConnection("server=ARATH; database=Restaurante; integrated security=true")
         conexion.Open()
 
@@ -27,8 +25,11 @@ Public Class Form1
         lector = comando.ExecuteReader
 
         If (lector.HasRows) Then
-            Form2.Show()
             MessageBox.Show("Bienvenido, '" & txtUsuario.Text & "'")
+
+            Dim ventana As New Inicio
+            ventana.Usuario = txtUsuario.Text
+            ventana.Show()
             Me.Hide()
         Else
             MessageBox.Show("Usuario o Contraseña incorrecta, porfavor verifique")
