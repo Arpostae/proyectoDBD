@@ -1,10 +1,12 @@
 ﻿'Imports System.Data.SqlClient
 Imports System.Data.SqlClient
+Imports System.Security.Cryptography.X509Certificates
 
 Public Class Form1
 
     Dim conexion As New SqlConnection
     Dim comando As New SqlCommand
+    Dim idRol As String
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -16,8 +18,6 @@ Public Class Form1
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
         'conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
-        'conexion.Open()
-
         'conexion = New SqlConnection("server=ARATH; database=Restaurante; integrated security=true")
         conexion.Open()
 
@@ -26,10 +26,21 @@ Public Class Form1
         Dim lector As SqlDataReader
         lector = comando.ExecuteReader
 
+        If txtUsuario.Text.Trim <> "" And txtContrasenia.Text.Trim <> "" Then
+            accesoAdmin(conexion, txtUsuario.Text.Trim, txtContrasenia.Text.Trim, idRol)
+        Else
+            MessageBox.Show("Llene todos los datos", "Datos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+
+
         If (lector.HasRows) Then
-            Form2.Show()
             MessageBox.Show("Bienvenido, '" & txtUsuario.Text & "'")
+
+            Dim ventana As New Inicio
+            ventana.Usuario = txtUsuario.Text
+            ventana.Show()
             Me.Hide()
+
         Else
             MessageBox.Show("Usuario o Contraseña incorrecta, porfavor verifique")
         End If
