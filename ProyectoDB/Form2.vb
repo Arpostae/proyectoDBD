@@ -42,7 +42,8 @@ Public Class Form2
     End Sub
 
     Private Sub bttnAjustesAdmin_Click(sender As Object, e As EventArgs) Handles bttnAjustesAdmin.Click
-        frmAdminMenu.Show()
+        Form4.Show()
+
         Me.Close()
 
     End Sub

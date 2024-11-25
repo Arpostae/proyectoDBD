@@ -113,6 +113,12 @@
     <Compile Include="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAccederAdmin.Designer.vb">
+      <DependentUpon>frmAccederAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccederAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAdminMenu.Designer.vb">
       <DependentUpon>frmAdminMenu.vb</DependentUpon>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccederAdmin.resx">
+      <DependentUpon>frmAccederAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminMenu.resx">
       <DependentUpon>frmAdminMenu.vb</DependentUpon>

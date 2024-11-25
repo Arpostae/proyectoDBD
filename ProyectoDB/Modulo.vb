@@ -39,4 +39,24 @@ Module Module1
         dgvMenu.DataSource = tabla
 
     End Sub
+
+    Sub accesoAdmin(conexionString As String, usuario As String, password As String, ByRef idRol As String)
+        Using conexion As New SqlConnection(conexionString)
+
+            Try
+                conexion.Open()
+                Dim query As String = "Select IdRol From Empleados Where Usuario = '" & usuario & "' and Contraseña = '" & password & "'"
+                Dim command As New SqlCommand(query, conexion)
+                Dim reader As SqlDataReader = command.ExecuteReader()
+                If reader.Read() Then
+                    idRol = reader(0).ToString()
+                End If
+
+                conexion.Close()
+            Catch ex As Exception
+                MessageBox.Show($"Error: {ex.Message}")
+            End Try
+
+        End Using
+    End Sub
 End Module
