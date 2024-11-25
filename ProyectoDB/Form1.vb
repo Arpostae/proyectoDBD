@@ -42,7 +42,7 @@ Public Class Form1
             Me.Hide()
 
         Else
-            MessageBox.Show("Usuario o Contraseña incorrecta, porfavor verifique")
+            MessageBox.Show("Usuario o Contraseña incorrecta. Intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
