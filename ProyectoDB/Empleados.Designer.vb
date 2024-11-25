@@ -45,118 +45,130 @@ Partial Class btnEmpleados
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgvDatos.Location = New System.Drawing.Point(12, 141)
-        Me.dgvDatos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgvDatos.Location = New System.Drawing.Point(9, 115)
+        Me.dgvDatos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgvDatos.Name = "dgvDatos"
         Me.dgvDatos.RowHeadersWidth = 51
         Me.dgvDatos.RowTemplate.Height = 28
         Me.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDatos.Size = New System.Drawing.Size(521, 175)
+        Me.dgvDatos.Size = New System.Drawing.Size(391, 142)
         Me.dgvDatos.TabIndex = 5
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 2)
+        Me.Button1.Location = New System.Drawing.Point(9, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 35)
+        Me.Button1.Size = New System.Drawing.Size(106, 28)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Mostrar Empleados"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(159, 2)
+        Me.Button2.Location = New System.Drawing.Point(119, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(133, 37)
+        Me.Button2.Size = New System.Drawing.Size(100, 30)
         Me.Button2.TabIndex = 7
         Me.Button2.Text = "AgregarEmpleado"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'txtIdEmpleado
         '
-        Me.txtIdEmpleado.Location = New System.Drawing.Point(12, 67)
+        Me.txtIdEmpleado.Location = New System.Drawing.Point(9, 54)
+        Me.txtIdEmpleado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtIdEmpleado.Name = "txtIdEmpleado"
-        Me.txtIdEmpleado.Size = New System.Drawing.Size(81, 22)
+        Me.txtIdEmpleado.Size = New System.Drawing.Size(62, 20)
         Me.txtIdEmpleado.TabIndex = 8
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 48)
+        Me.Label1.Location = New System.Drawing.Point(9, 39)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 16)
+        Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "IdEmpleado"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(112, 48)
+        Me.Label2.Location = New System.Drawing.Point(84, 39)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 16)
+        Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Nombre"
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(112, 67)
+        Me.txtNombre.Location = New System.Drawing.Point(84, 54)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(113, 22)
+        Me.txtNombre.Size = New System.Drawing.Size(86, 20)
         Me.txtNombre.TabIndex = 10
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(235, 48)
+        Me.Label3.Location = New System.Drawing.Point(176, 39)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 16)
+        Me.Label3.Size = New System.Drawing.Size(73, 13)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "PrimerApellido"
         '
         'txtPrimerApellido
         '
-        Me.txtPrimerApellido.Location = New System.Drawing.Point(238, 67)
+        Me.txtPrimerApellido.Location = New System.Drawing.Point(178, 54)
+        Me.txtPrimerApellido.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPrimerApellido.Name = "txtPrimerApellido"
-        Me.txtPrimerApellido.Size = New System.Drawing.Size(112, 22)
+        Me.txtPrimerApellido.Size = New System.Drawing.Size(85, 20)
         Me.txtPrimerApellido.TabIndex = 12
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(359, 48)
+        Me.Label4.Location = New System.Drawing.Point(269, 39)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(112, 16)
+        Me.Label4.Size = New System.Drawing.Size(87, 13)
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "SegundoApellido"
         '
         'txtSegundoApellido
         '
-        Me.txtSegundoApellido.Location = New System.Drawing.Point(359, 67)
+        Me.txtSegundoApellido.Location = New System.Drawing.Point(269, 54)
+        Me.txtSegundoApellido.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSegundoApellido.Name = "txtSegundoApellido"
-        Me.txtSegundoApellido.Size = New System.Drawing.Size(112, 22)
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(85, 20)
         Me.txtSegundoApellido.TabIndex = 14
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(477, 48)
+        Me.Label5.Location = New System.Drawing.Point(358, 39)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 16)
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Telefono"
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(477, 67)
+        Me.txtTelefono.Location = New System.Drawing.Point(358, 54)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(112, 22)
+        Me.txtTelefono.Size = New System.Drawing.Size(85, 20)
         Me.txtTelefono.TabIndex = 16
         '
         'btnEmpleados
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(600, 366)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtTelefono)
         Me.Controls.Add(Me.Label4)
@@ -170,7 +182,9 @@ Partial Class btnEmpleados
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dgvDatos)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "btnEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleados"
         CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -3,7 +3,8 @@
 Module Module1
     Sub Main()
         ' Cadena de conexión
-        Dim connectionString As String = "Server=ARATH;Database=Restaurante;Integrated Security=True;"
+        Dim connectionString As String = "Server=DESKTOP-GR0BB9K\SQLEXPRESS;Database=Restaurante;Integrated Security=True;"
+        ' Dim connectionString As String = "Server=ARATH;Database=Restaurante;Integrated Security=True;"
 
         ' Objeto de conexión
         Using connection As New SqlConnection(connectionString)
@@ -29,5 +30,13 @@ Module Module1
 
         ' Mantener consola abierta
         Console.ReadLine()
+    End Sub
+
+    Sub LlenarGridAdmin(sqlCon As SqlConnection, query As String, ByRef dgvMenu As DataGridView)
+        Dim adaptador As New SqlDataAdapter(query, sqlCon)
+        Dim tabla As New DataTable()
+        adaptador.Fill(tabla)
+        dgvMenu.DataSource = tabla
+
     End Sub
 End Module

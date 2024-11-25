@@ -40,4 +40,10 @@ Public Class Form2
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Form1.Show()
     End Sub
+
+    Private Sub bttnAjustesAdmin_Click(sender As Object, e As EventArgs) Handles bttnAjustesAdmin.Click
+        frmAdminMenu.Show()
+        Me.Close()
+
+    End Sub
 End Class
