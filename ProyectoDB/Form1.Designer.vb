@@ -36,10 +36,10 @@ Partial Class Form1
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(134, 416)
-        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAceptar.Location = New System.Drawing.Point(100, 338)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(172, 32)
+        Me.btnAceptar.Size = New System.Drawing.Size(129, 26)
         Me.btnAceptar.TabIndex = 0
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
@@ -47,55 +47,58 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(180, 237)
+        Me.Label3.Location = New System.Drawing.Point(135, 193)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 16)
+        Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Bienvenido"
         '
         'txtContrasenia
         '
-        Me.txtContrasenia.Location = New System.Drawing.Point(124, 335)
-        Me.txtContrasenia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtContrasenia.Location = New System.Drawing.Point(93, 272)
+        Me.txtContrasenia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtContrasenia.Name = "txtContrasenia"
         Me.txtContrasenia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContrasenia.Size = New System.Drawing.Size(223, 22)
+        Me.txtContrasenia.Size = New System.Drawing.Size(168, 20)
         Me.txtContrasenia.TabIndex = 9
         Me.txtContrasenia.UseSystemPasswordChar = True
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 341)
+        Me.Label2.Location = New System.Drawing.Point(21, 277)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 16)
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Contraseña"
         '
         'txtUsuario
         '
         Me.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtUsuario.Location = New System.Drawing.Point(124, 277)
-        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtUsuario.Location = New System.Drawing.Point(93, 225)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(223, 22)
+        Me.txtUsuario.Size = New System.Drawing.Size(168, 20)
         Me.txtUsuario.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 283)
+        Me.Label1.Location = New System.Drawing.Point(38, 230)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 16)
+        Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Usuario"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(130, 376)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Location = New System.Drawing.Point(98, 306)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(176, 25)
+        Me.Button1.Size = New System.Drawing.Size(132, 20)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Confirmar Conexion"
         Me.Button1.UseVisualStyleBackColor = True
@@ -103,19 +106,20 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(124, 22)
+        Me.PictureBox1.Location = New System.Drawing.Point(93, 18)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(182, 194)
+        Me.PictureBox1.Size = New System.Drawing.Size(136, 158)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(429, 490)
+        Me.ClientSize = New System.Drawing.Size(322, 398)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
@@ -125,11 +129,10 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAceptar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
         Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
