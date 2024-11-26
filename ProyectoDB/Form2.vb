@@ -33,7 +33,7 @@ Public Class Form2
 
 
     Private Sub Button4_Click(sender As Object, e As EventArgs)
-        btnEmpleados.Show()
+        'btnEmpleados.Show()
         Me.Close()
     End Sub
 
