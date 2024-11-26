@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Linq.Expressions
 
 Public Class Inicio
     Public Property Usuario As String
@@ -7,6 +8,7 @@ Public Class Inicio
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblBienvenida.Text = "¡Bienvenido, '" & Usuario.ToString() & "'!"
         TabControl1.TabPages.Remove(tbModMenu)
+        TabControl1.TabPages.Remove(tbModEmpleados)
     End Sub
 
     Private Sub btnMesas_Click(sender As Object, e As EventArgs) Handles btnMesas.Click
@@ -21,6 +23,7 @@ Public Class Inicio
         If idRol = "1" Then
             MessageBox.Show("Usted es admnistrador", "Acceso Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
             TabControl1.TabPages.Add(tbModMenu)
+            TabControl1.TabPages.Add(tbModEmpleados)
         Else
             MessageBox.Show("Usted no es administrador", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
@@ -75,6 +78,7 @@ Public Class Inicio
 
     Private Sub bttnPostres_Click(sender As Object, e As EventArgs) Handles bttnPostres.Click
         Try
+
             conexion.Open()
             LlenarGridAdmin(conexion, "Select * From Platos Where IdCategoria = 3", dgvMenu)
             conexion.Close()
@@ -115,6 +119,11 @@ Public Class Inicio
                 sqlCon.CommandText = "Update Platos Set Precio = " & txtPrecio.Text.Trim & ", Nombre = '" & txtNombre.Text.Trim & "',Descripcion = '" & txtDetalle.Text.Trim & "', IdCategoria = " & cmbCategoria.SelectedIndex + 1 & " Where IdPlato = " & txtId.Text.Trim
                 sqlCon.Connection = conexion
                 sqlCon.ExecuteReader()
+                txtId.Text = ""
+                txtPrecio.Text = ""
+                txtNombre.Text = ""
+                txtDetalle.Text = ""
+
                 MessageBox.Show("Se han actualizado los datos con exito", "Exitoso!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show($"Error: {ex.Message}")
@@ -172,5 +181,195 @@ Public Class Inicio
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
+    End Sub
+
+    'ModEmpleados
+    Private Sub CargarDatos()
+        Try
+            Dim consulta As String = "SELECT * FROM Empleados order by IdEmpleado asc"
+            Dim adaptador As New SqlDataAdapter(consulta, conexion)
+            Dim tabla As New DataTable()
+            adaptador.Fill(tabla)
+            dgvDatos.DataSource = tabla
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar datos: " & ex.Message)
+        End Try
+    End Sub
+
+
+    Private Sub dgvDatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDatos.CellContentClick
+
+    End Sub
+
+    Private Sub btnMostrar_Click(sender As Object, e As EventArgs) Handles btnMostrar.Click
+        CargarDatos()
+
+        TextBox1.Enabled = True
+        txtNombre.Enabled = True
+        txtPrimerApellido.Enabled = True
+        txtSegundoApellido.Enabled = True
+        txtTelefono.Enabled = True
+        btnAgregar.Enabled = True
+        btnModificar.Enabled = True
+        btnEliminar.Enabled = True
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Try
+            conexion.Open()
+            Dim consulta As String = "INSERT INTO Empleados (Nombre, ApellidoPaterno, ApellidoMaterno, Telefono) VALUES (@Nombre, @ApellidoPaterno, @ApellidoMaterno, @Telefono)"
+            comando = New SqlCommand(consulta, conexion)
+            comando.Parameters.AddWithValue("@Nombre", txtNombre.Text.Trim)
+            comando.Parameters.AddWithValue("@ApellidoPaterno", txtPrimerApellido.Text.Trim)
+            comando.Parameters.AddWithValue("@ApellidoMaterno", txtSegundoApellido.Text.Trim)
+            comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text.Trim)
+
+            comando.ExecuteNonQuery()
+            MessageBox.Show("Empleado agregado exitosamente.")
+            CargarDatos()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            If conexion.State = ConnectionState.Open Then
+                conexion.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        txtIdEmpleado.Enabled = True
+        btnAgregar.Enabled = False
+        btnEliminar.Enabled = False
+        Try
+
+            If String.IsNullOrEmpty(txtIdEmpleado.Text.Trim) Then
+                MessageBox.Show("Por favor, selecciona un empleado para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            conexion.Open()
+
+            Dim consulta As String = "UPDATE Empleados SET Nombre = @Nombre, ApellidoPaterno = @ApellidoPaterno, ApellidoMaterno = @ApellidoMaterno, Telefono = @Telefono WHERE IdEmpleado = @IdEmpleado"
+            Dim comando As New SqlCommand(consulta, conexion)
+
+            comando.Parameters.AddWithValue("@Nombre", txtNombre.Text.Trim)
+            comando.Parameters.AddWithValue("@ApellidoPaterno", txtPrimerApellido.Text.Trim)
+            comando.Parameters.AddWithValue("@ApellidoMaterno", txtSegundoApellido.Text.Trim)
+            comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text.Trim)
+            comando.Parameters.AddWithValue("@IdEmpleado", txtIdEmpleado.Text.Trim)
+
+            Dim filasAfectadas As Integer = comando.ExecuteNonQuery()
+
+            If filasAfectadas > 0 Then
+                MessageBox.Show("Empleado modificado exitosamente.")
+                txtIdEmpleado.Enabled = False
+                btnEliminar.Enabled = True
+                btnAgregar.Enabled = True
+                limpiarPantalla()
+                CargarDatos()
+            Else
+                MessageBox.Show("No se encontró un empleado con ese ID.")
+                txtIdEmpleado.Enabled = False
+                btnEliminar.Enabled = True
+                btnAgregar.Enabled = True
+                limpiarPantalla()
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error al modificar empleado: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Finally
+            If conexion.State = ConnectionState.Open Then
+                conexion.Close()
+            End If
+        End Try
+    End Sub
+
+    Sub limpiarPantalla()
+        txtIdEmpleado.Clear()
+        txtNombre.Clear()
+        txtPrimerApellido.Clear()
+        txtSegundoApellido.Clear()
+        txtTelefono.Clear()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Try
+            If String.IsNullOrEmpty(txtIdEmpleado.Text.Trim) Then
+                MessageBox.Show("Por favor, selecciona un empleado para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtIdEmpleado.Enabled = True
+                txtNombre.Enabled = False
+                txtPrimerApellido.Enabled = False
+                txtSegundoApellido.Enabled = False
+                txtTelefono.Enabled = False
+                btnAgregar.Enabled = False
+                btnModificar.Enabled = False
+                Return
+            End If
+
+            If MessageBox.Show("¿Seguro que desea eliminar este empleado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+
+                conexion.Open()
+
+                Dim consulta As String = "DELETE FROM Empleados WHERE IdEmpleado = @IdEmpleado"
+                Dim comando As New SqlCommand(consulta, conexion)
+
+                comando.Parameters.AddWithValue("@IdEmpleado", txtIdEmpleado.Text.Trim)
+
+                Dim filasAfectadas As Integer = comando.ExecuteNonQuery()
+
+                If filasAfectadas > 0 Then
+                    MessageBox.Show("Empleado eliminado exitosamente.")
+                    txtIdEmpleado.Enabled = False
+                    btnModificar.Enabled = True
+                    btnAgregar.Enabled = True
+                    limpiarPantalla()
+                    CargarDatos()
+                Else
+                    MessageBox.Show("No se encontró un empleado con ese ID.")
+                    txtIdEmpleado.Enabled = False
+                    txtNombre.Enabled = True
+                    txtPrimerApellido.Enabled = True
+                    txtSegundoApellido.Enabled = True
+                    txtTelefono.Enabled = True
+                    btnModificar.Enabled = True
+                    btnAgregar.Enabled = True
+                    limpiarPantalla()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error al eliminar empleado: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            If conexion.State = ConnectionState.Open Then
+                conexion.Close()
+            End If
+        End Try
+
+    End Sub
+
+    Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged
+
+    End Sub
+
+    Private Sub tbModEmpleados_Click(sender As Object, e As EventArgs) Handles tbModEmpleados.Click
+
+    End Sub
+
+    Private Sub dgvDatos_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDatos.CellContentDoubleClick
+        If dgvDatos.CurrentRow.Cells(0).Value.ToString().Trim <> "" Then
+            txtIdEmpleado.Text = dgvDatos.CurrentRow.Cells(0).Value.ToString
+            TextBox1.Text = dgvDatos.CurrentRow.Cells(1).Value.ToString
+            txtPrimerApellido.Text = dgvDatos.CurrentRow.Cells(2).Value.ToString
+            txtSegundoApellido.Text = dgvDatos.CurrentRow.Cells(3).Value.ToString
+            txtTelefono.Text = dgvDatos.CurrentRow.Cells(7).Value.ToString
+
+            TextBox1.Enabled = True
+            txtNombre.Enabled = True
+            txtPrimerApellido.Enabled = True
+            txtSegundoApellido.Enabled = True
+            txtTelefono.Enabled = True
+            btnModificar.Enabled = True
+            btnEliminar.Enabled = True
+        End If
     End Sub
 End Class

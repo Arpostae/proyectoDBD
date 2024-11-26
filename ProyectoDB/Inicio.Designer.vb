@@ -68,6 +68,7 @@ Partial Class Inicio
         Me.Label18 = New System.Windows.Forms.Label()
         Me.bttnBebidas = New System.Windows.Forms.Button()
         Me.bttnPostres = New System.Windows.Forms.Button()
+        Me.bttnComida = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnConfig = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -88,7 +89,24 @@ Partial Class Inicio
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnMesas = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.bttnComida = New System.Windows.Forms.Button()
+        Me.tbModEmpleados = New System.Windows.Forms.TabPage()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtSegundoApellido = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtPrimerApellido = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.txtIdEmpleado = New System.Windows.Forms.TextBox()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnMostrar = New System.Windows.Forms.Button()
+        Me.dgvDatos = New System.Windows.Forms.DataGridView()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -110,6 +128,10 @@ Partial Class Inicio
         Me.Panel3.SuspendLayout()
         CType(Me.btnMesas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbModEmpleados.SuspendLayout()
+        CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel3.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -121,6 +143,7 @@ Partial Class Inicio
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.tbModMenu)
+        Me.TabControl1.Controls.Add(Me.tbModEmpleados)
         Me.TabControl1.Location = New System.Drawing.Point(127, 75)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Name = "TabControl1"
@@ -643,6 +666,17 @@ Partial Class Inicio
         Me.bttnPostres.TabIndex = 2
         Me.bttnPostres.UseVisualStyleBackColor = True
         '
+        'bttnComida
+        '
+        Me.bttnComida.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.bttnComida.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bttnComida.Image = CType(resources.GetObject("bttnComida.Image"), System.Drawing.Image)
+        Me.bttnComida.Location = New System.Drawing.Point(3, 19)
+        Me.bttnComida.Name = "bttnComida"
+        Me.bttnComida.Size = New System.Drawing.Size(77, 68)
+        Me.bttnComida.TabIndex = 14
+        Me.bttnComida.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -880,16 +914,245 @@ Partial Class Inicio
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'bttnComida
+        'tbModEmpleados
         '
-        Me.bttnComida.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.bttnComida.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bttnComida.Image = CType(resources.GetObject("bttnComida.Image"), System.Drawing.Image)
-        Me.bttnComida.Location = New System.Drawing.Point(3, 19)
-        Me.bttnComida.Name = "bttnComida"
-        Me.bttnComida.Size = New System.Drawing.Size(77, 68)
-        Me.bttnComida.TabIndex = 14
-        Me.bttnComida.UseVisualStyleBackColor = True
+        Me.tbModEmpleados.Controls.Add(Me.TableLayoutPanel4)
+        Me.tbModEmpleados.Controls.Add(Me.TableLayoutPanel3)
+        Me.tbModEmpleados.Controls.Add(Me.dgvDatos)
+        Me.tbModEmpleados.Location = New System.Drawing.Point(4, 22)
+        Me.tbModEmpleados.Name = "tbModEmpleados"
+        Me.tbModEmpleados.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbModEmpleados.Size = New System.Drawing.Size(916, 447)
+        Me.tbModEmpleados.TabIndex = 4
+        Me.tbModEmpleados.Text = "Empleados"
+        Me.tbModEmpleados.UseVisualStyleBackColor = True
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnEliminar.Enabled = False
+        Me.btnEliminar.Location = New System.Drawing.Point(416, 2)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(137, 40)
+        Me.btnEliminar.TabIndex = 49
+        Me.btnEliminar.Text = "Eliminar "
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModificar.Enabled = False
+        Me.btnModificar.Location = New System.Drawing.Point(278, 2)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(134, 40)
+        Me.btnModificar.TabIndex = 48
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label19.Location = New System.Drawing.Point(666, 0)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(165, 25)
+        Me.Label19.TabIndex = 47
+        Me.Label19.Text = "Telefono"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtTelefono.Enabled = False
+        Me.txtTelefono.Location = New System.Drawing.Point(666, 27)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(165, 20)
+        Me.txtTelefono.TabIndex = 46
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label20.Location = New System.Drawing.Point(500, 0)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(162, 25)
+        Me.Label20.TabIndex = 45
+        Me.Label20.Text = "Segundo Apellido"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'txtSegundoApellido
+        '
+        Me.txtSegundoApellido.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtSegundoApellido.Enabled = False
+        Me.txtSegundoApellido.Location = New System.Drawing.Point(500, 27)
+        Me.txtSegundoApellido.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtSegundoApellido.Name = "txtSegundoApellido"
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(162, 20)
+        Me.txtSegundoApellido.TabIndex = 44
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label21.Location = New System.Drawing.Point(334, 0)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(162, 25)
+        Me.Label21.TabIndex = 43
+        Me.Label21.Text = "Primer Apellido"
+        Me.Label21.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'txtPrimerApellido
+        '
+        Me.txtPrimerApellido.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtPrimerApellido.Enabled = False
+        Me.txtPrimerApellido.Location = New System.Drawing.Point(334, 27)
+        Me.txtPrimerApellido.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtPrimerApellido.Name = "txtPrimerApellido"
+        Me.txtPrimerApellido.Size = New System.Drawing.Size(162, 20)
+        Me.txtPrimerApellido.TabIndex = 42
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label22.Location = New System.Drawing.Point(168, 0)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(162, 25)
+        Me.Label22.TabIndex = 41
+        Me.Label22.Text = "Nombre"
+        Me.Label22.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(168, 27)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(162, 20)
+        Me.TextBox1.TabIndex = 40
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label23.Location = New System.Drawing.Point(2, 0)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(162, 25)
+        Me.Label23.TabIndex = 39
+        Me.Label23.Text = "IdEmpleado"
+        Me.Label23.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'txtIdEmpleado
+        '
+        Me.txtIdEmpleado.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtIdEmpleado.Enabled = False
+        Me.txtIdEmpleado.Location = New System.Drawing.Point(2, 27)
+        Me.txtIdEmpleado.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIdEmpleado.Name = "txtIdEmpleado"
+        Me.txtIdEmpleado.Size = New System.Drawing.Size(162, 20)
+        Me.txtIdEmpleado.TabIndex = 38
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAgregar.Enabled = False
+        Me.btnAgregar.Location = New System.Drawing.Point(140, 2)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(134, 40)
+        Me.btnAgregar.TabIndex = 37
+        Me.btnAgregar.Text = "Agregar "
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'btnMostrar
+        '
+        Me.btnMostrar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnMostrar.Location = New System.Drawing.Point(2, 2)
+        Me.btnMostrar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnMostrar.Name = "btnMostrar"
+        Me.btnMostrar.Size = New System.Drawing.Size(134, 40)
+        Me.btnMostrar.TabIndex = 36
+        Me.btnMostrar.Text = "Mostrar Empleados"
+        Me.btnMostrar.UseVisualStyleBackColor = True
+        '
+        'dgvDatos
+        '
+        Me.dgvDatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgvDatos.Location = New System.Drawing.Point(14, 167)
+        Me.dgvDatos.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvDatos.MultiSelect = False
+        Me.dgvDatos.Name = "dgvDatos"
+        Me.dgvDatos.ReadOnly = True
+        Me.dgvDatos.RowHeadersWidth = 51
+        Me.dgvDatos.RowTemplate.Height = 28
+        Me.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvDatos.Size = New System.Drawing.Size(892, 272)
+        Me.dgvDatos.TabIndex = 35
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel3.ColumnCount = 5
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.txtIdEmpleado, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.TextBox1, 1, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtPrimerApellido, 2, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label23, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label22, 1, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label20, 3, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label19, 4, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtSegundoApellido, 3, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtTelefono, 4, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label21, 2, 0)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(47, 95)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(833, 50)
+        Me.TableLayoutPanel3.TabIndex = 50
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 4
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.btnAgregar, 1, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnModificar, 2, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnMostrar, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnEliminar, 3, 0)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(188, 37)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(555, 44)
+        Me.TableLayoutPanel4.TabIndex = 51
         '
         'Inicio
         '
@@ -901,6 +1164,7 @@ Partial Class Inicio
         Me.Controls.Add(Me.TabControl1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Inicio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -933,6 +1197,11 @@ Partial Class Inicio
         Me.Panel3.PerformLayout()
         CType(Me.btnMesas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tbModEmpleados.ResumeLayout(False)
+        CType(Me.dgvDatos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
+        Me.TableLayoutPanel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1003,4 +1272,22 @@ Partial Class Inicio
     Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents bttnComida As Button
+    Friend WithEvents tbModEmpleados As TabPage
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents Label19 As Label
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents txtSegundoApellido As TextBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents txtPrimerApellido As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents txtIdEmpleado As TextBox
+    Friend WithEvents btnAgregar As Button
+    Friend WithEvents btnMostrar As Button
+    Friend WithEvents dgvDatos As DataGridView
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
 End Class
