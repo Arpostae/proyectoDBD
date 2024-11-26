@@ -49,8 +49,8 @@ Module Module1
             If reader.Read() Then
                 idRol = reader(0).ToString()
             End If
-
             conexion.Close()
+
         Catch ex As Exception
             MessageBox.Show($"Error: {ex.Message}")
         End Try

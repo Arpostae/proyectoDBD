@@ -63,9 +63,11 @@ Partial Class Inicio
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
         Me.dgvMenu = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.bttnComida = New System.Windows.Forms.Button()
-        Me.bttnPostres = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.bttnBebidas = New System.Windows.Forms.Button()
+        Me.bttnPostres = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnConfig = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -86,6 +88,7 @@ Partial Class Inicio
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnMesas = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.bttnComida = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -384,7 +387,7 @@ Partial Class Inicio
         Me.TableLayoutPanel2.Controls.Add(Me.lblPrecio, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.cmbCategoria, 4, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Label15, 4, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(91, 119)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(115, 123)
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
@@ -395,6 +398,7 @@ Partial Class Inicio
         '
         'txtId
         '
+        Me.txtId.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtId.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtId.Enabled = False
         Me.txtId.Location = New System.Drawing.Point(3, 19)
@@ -435,6 +439,7 @@ Partial Class Inicio
         '
         'txtNombre
         '
+        Me.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNombre.Enabled = False
         Me.txtNombre.Location = New System.Drawing.Point(199, 19)
         Me.txtNombre.Name = "txtNombre"
@@ -474,6 +479,7 @@ Partial Class Inicio
         '
         'cmbCategoria
         '
+        Me.cmbCategoria.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCategoria.Enabled = False
         Me.cmbCategoria.FormattingEnabled = True
@@ -546,7 +552,8 @@ Partial Class Inicio
         '
         'dgvMenu
         '
-        Me.dgvMenu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dgvMenu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -565,47 +572,81 @@ Partial Class Inicio
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Controls.Add(Me.bttnComida, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.bttnPostres, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.bttnBebidas, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(333, 30)
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Label16, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label17, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label18, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.bttnBebidas, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.bttnPostres, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.bttnComida, 0, 1)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(334, 30)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(251, 80)
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.53491!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.46509!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(250, 90)
         Me.TableLayoutPanel1.TabIndex = 8
         '
-        'bttnComida
+        'Label16
         '
-        Me.bttnComida.Image = CType(resources.GetObject("bttnComida.Image"), System.Drawing.Image)
-        Me.bttnComida.Location = New System.Drawing.Point(3, 3)
-        Me.bttnComida.Name = "bttnComida"
-        Me.bttnComida.Size = New System.Drawing.Size(77, 73)
-        Me.bttnComida.TabIndex = 0
-        Me.bttnComida.UseVisualStyleBackColor = True
+        Me.Label16.AutoSize = True
+        Me.Label16.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label16.Location = New System.Drawing.Point(3, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(77, 16)
+        Me.Label16.TabIndex = 11
+        Me.Label16.Text = "Comidas"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'bttnPostres
+        'Label17
         '
-        Me.bttnPostres.Image = CType(resources.GetObject("bttnPostres.Image"), System.Drawing.Image)
-        Me.bttnPostres.Location = New System.Drawing.Point(169, 3)
-        Me.bttnPostres.Name = "bttnPostres"
-        Me.bttnPostres.Size = New System.Drawing.Size(77, 73)
-        Me.bttnPostres.TabIndex = 2
-        Me.bttnPostres.UseVisualStyleBackColor = True
+        Me.Label17.AutoSize = True
+        Me.Label17.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label17.Location = New System.Drawing.Point(86, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(77, 16)
+        Me.Label17.TabIndex = 12
+        Me.Label17.Text = "Bebidas"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label18.Location = New System.Drawing.Point(169, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(78, 16)
+        Me.Label18.TabIndex = 13
+        Me.Label18.Text = "Postres"
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'bttnBebidas
         '
+        Me.bttnBebidas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.bttnBebidas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.bttnBebidas.Image = CType(resources.GetObject("bttnBebidas.Image"), System.Drawing.Image)
-        Me.bttnBebidas.Location = New System.Drawing.Point(86, 3)
+        Me.bttnBebidas.Location = New System.Drawing.Point(86, 19)
         Me.bttnBebidas.Name = "bttnBebidas"
-        Me.bttnBebidas.Size = New System.Drawing.Size(77, 73)
+        Me.bttnBebidas.Size = New System.Drawing.Size(77, 68)
         Me.bttnBebidas.TabIndex = 1
         Me.bttnBebidas.UseVisualStyleBackColor = True
         '
+        'bttnPostres
+        '
+        Me.bttnPostres.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.bttnPostres.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bttnPostres.Image = CType(resources.GetObject("bttnPostres.Image"), System.Drawing.Image)
+        Me.bttnPostres.Location = New System.Drawing.Point(169, 19)
+        Me.bttnPostres.Name = "bttnPostres"
+        Me.bttnPostres.Size = New System.Drawing.Size(78, 68)
+        Me.bttnPostres.TabIndex = 2
+        Me.bttnPostres.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Firebrick
         Me.Panel1.Controls.Add(Me.BtnConfig)
         Me.Panel1.Controls.Add(Me.Label7)
@@ -678,6 +719,8 @@ Partial Class Inicio
         '
         'Panel2
         '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.SandyBrown
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Controls.Add(Me.Panel5)
@@ -837,6 +880,17 @@ Partial Class Inicio
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'bttnComida
+        '
+        Me.bttnComida.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.bttnComida.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bttnComida.Image = CType(resources.GetObject("bttnComida.Image"), System.Drawing.Image)
+        Me.bttnComida.Location = New System.Drawing.Point(3, 19)
+        Me.bttnComida.Name = "bttnComida"
+        Me.bttnComida.Size = New System.Drawing.Size(77, 68)
+        Me.bttnComida.TabIndex = 14
+        Me.bttnComida.UseVisualStyleBackColor = True
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -860,6 +914,7 @@ Partial Class Inicio
         Me.ToolStrip1.PerformLayout()
         CType(Me.dgvMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.BtnConfig, System.ComponentModel.ISupportInitialize).EndInit()
@@ -942,7 +997,10 @@ Partial Class Inicio
     Friend WithEvents tsbCancelar As ToolStripButton
     Friend WithEvents dgvMenu As DataGridView
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents bttnComida As Button
     Friend WithEvents bttnPostres As Button
     Friend WithEvents bttnBebidas As Button
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents bttnComida As Button
 End Class

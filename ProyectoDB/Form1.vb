@@ -26,18 +26,12 @@ Public Class Form1
         Dim lector As SqlDataReader
         lector = comando.ExecuteReader
 
-        If txtUsuario.Text.Trim <> "" And txtContrasenia.Text.Trim <> "" Then
-            accesoAdmin(conexion, txtUsuario.Text.Trim, txtContrasenia.Text.Trim, idRol)
-        Else
-            MessageBox.Show("Llene todos los datos", "Datos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End If
-
-
         If (lector.HasRows) Then
             MessageBox.Show("Bienvenido, '" & txtUsuario.Text & "'")
 
             Dim ventana As New Inicio
             ventana.Usuario = txtUsuario.Text
+            ventana.Contrasenia = txtContrasenia.Text
             ventana.Show()
             Me.Hide()
 

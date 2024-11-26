@@ -2,8 +2,11 @@
 
 Public Class Inicio
     Public Property Usuario As String
+    Public Property Contrasenia As String
+    Private idRol As String
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblBienvenida.Text = "¡Bienvenido, '" & Usuario.ToString() & "'!"
+        TabControl1.TabPages.Remove(tbModMenu)
     End Sub
 
     Private Sub btnMesas_Click(sender As Object, e As EventArgs) Handles btnMesas.Click
@@ -11,8 +14,16 @@ Public Class Inicio
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
-        'Entrar a AccederAdmin        
+        If Usuario <> "" And Contrasenia <> "" Then
+            accesoAdmin(conexion, Usuario.Trim, Contrasenia.Trim, idRol)
+        End If
 
+        If idRol = "1" Then
+            MessageBox.Show("Usted es admnistrador", "Acceso Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TabControl1.TabPages.Add(tbModMenu)
+        Else
+            MessageBox.Show("Usted no es administrador", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
     End Sub
 
     Private Sub btnPlatillos_Click(sender As Object, e As EventArgs) Handles btnPlatillos.Click
@@ -47,15 +58,8 @@ Public Class Inicio
         End If
     End Sub
 
-    Private Sub bttnComida_Click_1(sender As Object, e As EventArgs) Handles bttnComida.Click
-        Try
-            conexion.Open()
-            LlenarGridAdmin(conexion, "Select * From Platos Where IdCategoria = 1", dgvMenu)
-            conexion.Close()
+    Private Sub bttnComida_Click_1(sender As Object, e As EventArgs)
 
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
     End Sub
 
     Private Sub bttnBebidas_Click_1(sender As Object, e As EventArgs) Handles bttnBebidas.Click
@@ -153,5 +157,20 @@ Public Class Inicio
 
         dgvMenu.Columns.Clear()
 
+    End Sub
+
+    Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
+
+    End Sub
+
+    Private Sub bttnComida_Click(sender As Object, e As EventArgs) Handles bttnComida.Click
+        Try
+            conexion.Open()
+            LlenarGridAdmin(conexion, "Select * From Platos Where IdCategoria = 1", dgvMenu)
+            conexion.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
     End Sub
 End Class
