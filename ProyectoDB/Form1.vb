@@ -16,8 +16,8 @@ Public Class Form1
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        'conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
-        conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
+        conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
+        'conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
         'conexion = New SqlConnection("server=ARATH; database=Restaurante; integrated security=true")
         conexion.Open()
 
@@ -26,18 +26,13 @@ Public Class Form1
         Dim lector As SqlDataReader
         lector = comando.ExecuteReader
 
-        If txtUsuario.Text.Trim <> "" And txtContrasenia.Text.Trim <> "" Then
-            accesoAdmin(conexion, txtUsuario.Text.Trim, txtContrasenia.Text.Trim, idRol)
-        Else
-            MessageBox.Show("Llene todos los datos", "Datos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End If
-
 
         If (lector.HasRows) Then
             MessageBox.Show("Bienvenido, '" & txtUsuario.Text & "'")
 
             Dim ventana As New Inicio
             ventana.Usuario = txtUsuario.Text
+            ventana.Contrasenia = txtContrasenia.Text
             ventana.Show()
             Me.Hide()
 
@@ -71,8 +66,8 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'Dim connectionString As String = "Server=DESKTOP-GR0BB9K\SQLEXPRESS;Database=Restaurante;Integrated Security=True;"
-        Dim connectionString As String = "Server=ARATH;Database=Restaurante;Integrated Security=True;"
+        Dim connectionString As String = "Server=DESKTOP-GR0BB9K\SQLEXPRESS;Database=Restaurante;Integrated Security=True;"
+        'Dim connectionString As String = "Server=ARATH;Database=Restaurante;Integrated Security=True;"
 
         ' Consulta de prueba
         Dim query As String = "SELECT TOP 1 * FROM Empleados"
