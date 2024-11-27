@@ -7,7 +7,8 @@ Public Class Inicio
     End Sub
 
     Private Sub btnMesas_Click(sender As Object, e As EventArgs) Handles btnMesas.Click
-
+        'Dim ventana As New 
+        TabControl.SelectedTab = Mesas
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
@@ -16,11 +17,13 @@ Public Class Inicio
     End Sub
 
     Private Sub btnPlatillos_Click(sender As Object, e As EventArgs) Handles btnPlatillos.Click
-
+        TabControl.SelectedTab = Platillos
+        Dim conexion As New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
+        Dim comando As New SqlCommand
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles btnPedidos.Click
-
+        TabControl.SelectedTab = Pedidos
     End Sub
 
 
@@ -152,6 +155,23 @@ Public Class Inicio
         cmbCategoria.Enabled = False
 
         dgvMenu.Columns.Clear()
+
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Dim ventana As New Form1
+        ventana.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnMesa1_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub PictureBox4_Click_1(sender As Object, e As EventArgs) Handles btnMesa1.Click
+        'Dim ventas As New 
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
 
     End Sub
 End Class

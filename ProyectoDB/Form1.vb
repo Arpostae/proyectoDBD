@@ -16,8 +16,8 @@ Public Class Form1
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
-        'conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
+        'conexion = New SqlConnection("server=DESKTOP-GR0BB9K\SQLEXPRESS; database=Restaurante; integrated security=true")
+        conexion = New SqlConnection("server=LENOVODIEGO\SQLEXPRESS; database=Restaurante; integrated security=true")
         'conexion = New SqlConnection("server=ARATH; database=Restaurante; integrated security=true")
         conexion.Open()
 
@@ -63,18 +63,11 @@ Public Class Form1
     End Sub
 
     Private Sub txtUsuario_TextChanged_1(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
-        If (txtUsuario.Text = "Usuario") Then
-            txtUsuario.Text = ""
-            txtUsuario.ForeColor = Color.BlueViolet
-        End If
 
     End Sub
 
     Private Sub txtContrasenia_TextChanged(sender As Object, e As EventArgs) Handles txtContrasenia.TextChanged
-        If (txtUsuario.Text = "Password") Then
-            txtUsuario.Text = ""
-            txtUsuario.ForeColor = Color.BlueViolet
-        End If
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
